@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/foodList">
+
+    <fragment
+        android:id="@+id/foodList"
+        android:name="com.example.crohnsmanagment1.ui.fragments.foodList.FoodList"
+        android:label="Food Log"
+        tools:layout="@layout/fragment_food_list" >
+        <action
+            android:id="@+id/action_foodList_to_updateFood"
+            app:destination="@id/updateFood" />
+        <action
+            android:id="@+id/action_foodList_to_addFood"
+            app:destination="@id/addFood" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFood"
+        android:name="com.example.crohnsmanagment1.ui.fragments.addFood.AddFood"
+        android:label="Add Food Log"
+        tools:layout="@layout/fragment_add_food" >
+        <action
+            android:id="@+id/action_addFood_to_foodList"
+            app:destination="@id/foodList" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFood"
+        android:name="com.example.crohnsmanagment1.ui.fragments.updateFood.UpdateFood"
+        android:label="Update Food Log"
+        tools:layout="@layout/fragment_update_food" >
+        <action
+            android:id="@+id/action_updateFood_to_foodList"
+            app:destination="@id/foodList" />
+    </fragment>
+</navigation>
