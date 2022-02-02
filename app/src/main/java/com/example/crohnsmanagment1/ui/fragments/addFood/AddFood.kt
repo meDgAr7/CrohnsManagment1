@@ -64,7 +64,7 @@ class AddFood : Fragment(R.layout.fragment_add_food),
             foodViewModel.addFood(food)
             Toast.makeText(context, "Food Added Successfully", Toast.LENGTH_SHORT).show()
 
-            findNavController().navigate(R.id.action_foodList_to_addFood)
+            findNavController().navigate(R.id.action_addFood_to_foodList)
 
         }else{
             Toast.makeText(context, "Please fill all the fields", Toast.LENGTH_SHORT).show()

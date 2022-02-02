@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/nav_delete"
+    <item android:id="@+id/nav_deleteEverything"
         android:icon="@drawable/ic_delete"
         android:title="Delete Everything"
         app:showAsAction="withText"/>
