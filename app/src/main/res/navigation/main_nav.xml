@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/foodList">
+    app:startDestination="@id/homePage">
 
     <fragment
         android:id="@+id/foodList"
@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_foodList_to_addFood"
             app:destination="@id/addFood" />
+        <action
+            android:id="@+id/action_foodList_to_homePage"
+            app:destination="@id/homePage" />
     </fragment>
     <fragment
         android:id="@+id/addFood"
@@ -37,5 +40,86 @@
         <argument
             android:name="selectedFood"
             app:argType="com.example.crohnsmanagment1.data.models.Food" />
+    </fragment>
+    <fragment
+        android:id="@+id/homePage"
+        android:name="com.example.crohnsmanagment1.homePage"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePage_to_foodList"
+            app:destination="@id/foodList" />
+        <action
+            android:id="@+id/action_homePage_to_moodList"
+            app:destination="@id/moodList" />
+        <action
+            android:id="@+id/action_homePage_to_exerciseList"
+            app:destination="@id/exerciseList" />
+    </fragment>
+    <fragment
+        android:id="@+id/moodList"
+        android:name="com.example.crohnsmanagment1.MoodList"
+        android:label="fragment_mood_list"
+        tools:layout="@layout/fragment_mood_list" >
+        <action
+            android:id="@+id/action_moodList_to_addMood"
+            app:destination="@id/addMood" />
+        <action
+            android:id="@+id/action_moodList_to_updateMood"
+            app:destination="@id/updateMood" />
+        <action
+            android:id="@+id/action_moodList_to_homePage"
+            app:destination="@id/homePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMood"
+        android:name="com.example.crohnsmanagment1.AddMood"
+        android:label="fragment_add_mood"
+        tools:layout="@layout/fragment_add_mood" >
+        <action
+            android:id="@+id/action_addMood_to_moodList"
+            app:destination="@id/moodList" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateMood"
+        android:name="com.example.crohnsmanagment1.UpdateMood"
+        android:label="fragment_update_mood"
+        tools:layout="@layout/fragment_update_mood" >
+        <action
+            android:id="@+id/action_updateMood_to_moodList"
+            app:destination="@id/moodList" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseList"
+        android:name="com.example.crohnsmanagment1.ExerciseList"
+        android:label="fragment_exercise_list"
+        tools:layout="@layout/fragment_exercise_list" >
+        <action
+            android:id="@+id/action_exerciseList_to_addExercise"
+            app:destination="@id/addExercise" />
+        <action
+            android:id="@+id/action_exerciseList_to_updateExercise"
+            app:destination="@id/updateExercise" />
+        <action
+            android:id="@+id/action_exerciseList_to_homePage"
+            app:destination="@id/homePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/addExercise"
+        android:name="com.example.crohnsmanagment1.AddExercise"
+        android:label="fragment_add_exercise"
+        tools:layout="@layout/fragment_add_exercise" >
+        <action
+            android:id="@+id/action_addExercise_to_exerciseList"
+            app:destination="@id/exerciseList" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateExercise"
+        android:name="com.example.crohnsmanagment1.UpdateExercise"
+        android:label="fragment_update_exercise"
+        tools:layout="@layout/fragment_update_exercise" >
+        <action
+            android:id="@+id/action_updateExercise_to_exerciseList"
+            app:destination="@id/exerciseList" />
     </fragment>
 </navigation>

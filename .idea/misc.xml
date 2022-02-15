@@ -8,11 +8,19 @@
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/drawable/round_button.xml" value="0.13518518518518519" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/activity_intro.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/activity_main.xml" value="0.17617753623188406" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_add_exercise.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_add_food.xml" value="0.22" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_exercise_list.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_food_list.xml" value="0.1796875" />
-        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_update_food.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_home_page.xml" value="0.1796875" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_mood_list.xml" value="0.1796875" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_update_exercise.xml" value="0.1796875" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_update_food.xml" value="0.1" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_update_mood.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/intro_item_page.xml" value="0.1796875" />
-        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/recycler_food_item.xml" value="0.1796875" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/recycler_exercise_item.xml" value="0.1796875" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/recycler_food_item.xml" value="0.1" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/recycler_mood_item.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/menu/nav_main.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/menu/single_item_menu.xml" value="0.1796875" />
       </map>
