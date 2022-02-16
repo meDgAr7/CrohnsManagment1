@@ -11,17 +11,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.crohnsmanagment1.R
-import com.example.crohnsmanagment1.data.models.Food
 import com.example.crohnsmanagment1.data.models.Mood
-import com.example.crohnsmanagment1.ui.fragments.foodList.adapters.FoodListAdapter
 import com.example.crohnsmanagment1.ui.fragments.moodList.adapters.MoodListAdapter
-import com.example.crohnsmanagment1.ui.viewmodels.FoodViewModel
 import com.example.crohnsmanagment1.ui.viewmodels.MoodViewModel
-import kotlinx.android.synthetic.main.fragment_food_list.*
-import kotlinx.android.synthetic.main.fragment_food_list.fab_add
-import kotlinx.android.synthetic.main.fragment_food_list.rv_food
-import kotlinx.android.synthetic.main.fragment_food_list.swipeToRefresh
-import kotlinx.android.synthetic.main.fragment_food_list.tv_emptyView
+import kotlinx.android.synthetic.main.fragment_mood_list.fab_add
+import kotlinx.android.synthetic.main.fragment_mood_list.swipeToRefresh
+import kotlinx.android.synthetic.main.fragment_mood_list.tv_emptyView
 import kotlinx.android.synthetic.main.fragment_mood_list.*
 
 
@@ -89,4 +84,4 @@ class MoodList : Fragment(R.layout.fragment_mood_list) {
 
 
 
-}}
+}

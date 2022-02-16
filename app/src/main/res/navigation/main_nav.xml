@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/homePage"
-        android:name="com.example.crohnsmanagment1.homePage"
+        android:name="com.example.crohnsmanagment1.ui.fragments.homePage.HomePage"
         android:label="fragment_home_page"
         tools:layout="@layout/fragment_home_page" >
         <action
@@ -58,7 +58,7 @@
     </fragment>
     <fragment
         android:id="@+id/moodList"
-        android:name="com.example.crohnsmanagment1.MoodList"
+        android:name="com.example.crohnsmanagment1.ui.fragments.moodList.MoodList"
         android:label="fragment_mood_list"
         tools:layout="@layout/fragment_mood_list" >
         <action
@@ -73,7 +73,7 @@
     </fragment>
     <fragment
         android:id="@+id/addMood"
-        android:name="com.example.crohnsmanagment1.AddMood"
+        android:name="com.example.crohnsmanagment1.ui.fragments.addMood.AddMood"
         android:label="fragment_add_mood"
         tools:layout="@layout/fragment_add_mood" >
         <action
@@ -82,16 +82,19 @@
     </fragment>
     <fragment
         android:id="@+id/updateMood"
-        android:name="com.example.crohnsmanagment1.UpdateMood"
+        android:name="com.example.crohnsmanagment1.ui.fragments.updateMood.UpdateMood"
         android:label="fragment_update_mood"
         tools:layout="@layout/fragment_update_mood" >
         <action
             android:id="@+id/action_updateMood_to_moodList"
             app:destination="@id/moodList" />
+        <argument
+            android:name="selectedMood"
+            app:argType="com.example.crohnsmanagment1.data.models.Mood" />
     </fragment>
     <fragment
         android:id="@+id/exerciseList"
-        android:name="com.example.crohnsmanagment1.ExerciseList"
+        android:name="com.example.crohnsmanagment1.ui.fragments.exerciseList.ExerciseList"
         android:label="fragment_exercise_list"
         tools:layout="@layout/fragment_exercise_list" >
         <action
@@ -106,7 +109,7 @@
     </fragment>
     <fragment
         android:id="@+id/addExercise"
-        android:name="com.example.crohnsmanagment1.AddExercise"
+        android:name="com.example.crohnsmanagment1.ui.fragments.addExercise.AddExercise"
         android:label="fragment_add_exercise"
         tools:layout="@layout/fragment_add_exercise" >
         <action
@@ -115,11 +118,14 @@
     </fragment>
     <fragment
         android:id="@+id/updateExercise"
-        android:name="com.example.crohnsmanagment1.UpdateExercise"
+        android:name="com.example.crohnsmanagment1.ui.fragments.updateExercise.UpdateExercise"
         android:label="fragment_update_exercise"
         tools:layout="@layout/fragment_update_exercise" >
         <action
             android:id="@+id/action_updateExercise_to_exerciseList"
             app:destination="@id/exerciseList" />
+        <argument
+            android:name="selectedExercise"
+            app:argType="com.example.crohnsmanagment1.data.models.Exercise" />
     </fragment>
 </navigation>

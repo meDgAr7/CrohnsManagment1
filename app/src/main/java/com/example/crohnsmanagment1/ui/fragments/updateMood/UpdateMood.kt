@@ -18,13 +18,11 @@ import com.example.crohnsmanagment1.R
 import com.example.crohnsmanagment1.data.models.Mood
 import com.example.crohnsmanagment1.logic.utils.Calculations
 import com.example.crohnsmanagment1.ui.viewmodels.MoodViewModel
-import kotlinx.android.synthetic.main.fragment_add_food.*
-import kotlinx.android.synthetic.main.fragment_update_food.*
-import kotlinx.android.synthetic.main.fragment_update_food.btn_confirm_update
-import kotlinx.android.synthetic.main.fragment_update_food.btn_pickDate_update
-import kotlinx.android.synthetic.main.fragment_update_food.btn_pickTime_update
-import kotlinx.android.synthetic.main.fragment_update_food.tv_dateSelected_update
-import kotlinx.android.synthetic.main.fragment_update_food.tv_timeSelected_update
+import kotlinx.android.synthetic.main.fragment_update_mood.btn_confirm_update
+import kotlinx.android.synthetic.main.fragment_update_mood.btn_pickDate_update
+import kotlinx.android.synthetic.main.fragment_update_mood.btn_pickTime_update
+import kotlinx.android.synthetic.main.fragment_update_mood.tv_dateSelected_update
+import kotlinx.android.synthetic.main.fragment_update_mood.tv_timeSelected_update
 import kotlinx.android.synthetic.main.fragment_update_mood.*
 import java.util.*
 
@@ -150,5 +148,4 @@ class UpdateMood : Fragment(R.layout.fragment_update_mood),
         findNavController().navigate(R.id.action_updateMood_to_moodList)
     }
 
-}
 }

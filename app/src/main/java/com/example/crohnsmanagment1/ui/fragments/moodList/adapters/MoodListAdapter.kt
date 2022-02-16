@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.crohnsmanagment1.MoodListDirections
+import com.example.crohnsmanagment1.ui.fragments.moodList.MoodListDirections
 import com.example.crohnsmanagment1.R
 import com.example.crohnsmanagment1.data.models.Mood
 import com.example.crohnsmanagment1.logic.utils.Calculations
-import kotlinx.android.synthetic.main.recycler_food_item.view.*
+import kotlinx.android.synthetic.main.recycler_mood_item.view.*
 
 class MoodListAdapter : RecyclerView.Adapter<MoodListAdapter.MyViewHolder>() {
 

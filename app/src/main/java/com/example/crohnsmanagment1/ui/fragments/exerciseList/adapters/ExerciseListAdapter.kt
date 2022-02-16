@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.crohnsmanagment1.ExerciseListDirections
+import com.example.crohnsmanagment1.ui.fragments.exerciseList.ExerciseListDirections
 import com.example.crohnsmanagment1.R
 import com.example.crohnsmanagment1.data.models.Exercise
 import com.example.crohnsmanagment1.logic.utils.Calculations
