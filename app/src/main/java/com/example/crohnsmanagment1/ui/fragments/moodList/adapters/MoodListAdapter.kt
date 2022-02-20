@@ -45,7 +45,7 @@ class MoodListAdapter : RecyclerView.Adapter<MoodListAdapter.MyViewHolder>() {
         holder.itemView.tv_item_title.text = currentMood.mood_title
         holder.itemView.tv_item_description.text = currentMood.mood_description
         holder.itemView.tv_timeElapsed.text = Calculations().calculateTimeBetweenDates(currentMood.mood_starTime)
-        holder.itemView.tv_item_createdTimeStamp.text = "Since: ${currentMood.mood_starTime}"
+        holder.itemView.tv_item_createdTimeStamp.text = "Added on: ${currentMood.mood_starTime}"
 
     }
 

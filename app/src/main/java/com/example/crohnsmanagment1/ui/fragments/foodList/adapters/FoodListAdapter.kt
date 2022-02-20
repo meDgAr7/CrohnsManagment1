@@ -45,7 +45,7 @@ class FoodListAdapter : RecyclerView.Adapter<FoodListAdapter.MyViewHolder>() {
         holder.itemView.tv_item_title.text = currentFood.food_title
         holder.itemView.tv_item_description.text = currentFood.food_description
         holder.itemView.tv_timeElapsed.text = Calculations().calculateTimeBetweenDates(currentFood.food_starTime)
-        holder.itemView.tv_item_createdTimeStamp.text = "Since: ${currentFood.food_starTime}"
+        holder.itemView.tv_item_createdTimeStamp.text = "Added on: ${currentFood.food_starTime}"
 
     }
 

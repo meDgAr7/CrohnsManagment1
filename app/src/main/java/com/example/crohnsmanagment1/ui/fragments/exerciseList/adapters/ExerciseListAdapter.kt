@@ -45,7 +45,7 @@ class ExerciseListAdapter : RecyclerView.Adapter<ExerciseListAdapter.MyViewHolde
         holder.itemView.tv_item_title.text = currentExercise.exercise_title
         holder.itemView.tv_item_description.text = currentExercise.exercise_description
         holder.itemView.tv_timeElapsed.text = Calculations().calculateTimeBetweenDates(currentExercise.exercise_starTime)
-        holder.itemView.tv_item_createdTimeStamp.text = "Since: ${currentExercise.exercise_starTime}"
+        holder.itemView.tv_item_createdTimeStamp.text = "Added on: ${currentExercise.exercise_starTime}"
 
     }
 

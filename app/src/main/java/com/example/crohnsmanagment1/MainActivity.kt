@@ -8,6 +8,13 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.crohnsmanagment1.ui.introscreen.IntroActivity
 
+
+import com.example.crohnsmanagment1.R
+
+
+
+
+
 class MainActivity : AppCompatActivity() {
 
     private var userFirstTime = true
@@ -27,7 +34,9 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
+
         setupActionBarWithNavController(findNavController(R.id.navHostFragment))
+
 
     }
 
