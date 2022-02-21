@@ -32,7 +32,7 @@
         app:itemBackground="@color/design_default_color_primary"
         app:itemIconTint="#fff"
         app:itemTextColor="#fff"
-        app:menu="@menu/bottom_nav_bar"/>
+        app:menu="@menu/bottom_nav_bar" />
 
 
 

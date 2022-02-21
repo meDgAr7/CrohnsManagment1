@@ -3,25 +3,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?android:windowBackground"
-    tools:context="ui.fragments.homePage.HomePage">
+    tools:context=".ui.fragments.updateStool.UpdateStool"
+    android:background="@android:color/white">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
 
-
         <LinearLayout
-            android:id="@+id/ll_textviews"
+            android:id="@+id/ll_textviews_update"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
 
+            <EditText
+                android:id="@+id/et_stoolTitle_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:backgroundTint="#26A69A"
+                android:hint="Stool title"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_stoolDescription_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:backgroundTint="#26A69A"
+                android:hint="Give it a short description"
+                android:inputType="textShortMessage"
+                android:minHeight="48dp"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
 
             <Button
-                android:id="@+id/btn_foodLog"
+                android:id="@+id/btn_pickDate_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -30,60 +52,57 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:minHeight="84dp"
-                android:text="Food Log"
+                android:minHeight="48dp"
+                android:text="Pick a date"
                 android:textSize="20sp"
                 android:textColor="@android:color/white" />
 
+            <TextView
+                android:id="@+id/tv_dateSelected_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Date: (not selected)"
+                android:textSize="20sp" />
+
             <Button
-                android:id="@+id/btn_exerciseLog"
+                android:id="@+id/btn_pickTime_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@drawable/round_button"
-                android:backgroundTint="#2196F3"
+                android:backgroundTint="#42A5F5"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:minHeight="84dp"
-                android:text="Exercise Log"
+                android:minHeight="48dp"
+                android:text="Pick a time"
                 android:textSize="20sp"
                 android:textColor="@android:color/white" />
 
+            <TextView
+                android:id="@+id/tv_timeSelected_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Time: (not selected)"
+                android:textSize="20sp" />
+
 
             <Button
-                android:id="@+id/btn_moodLog"
+                android:id="@+id/btn_confirm_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@drawable/round_button"
-                android:backgroundTint="#9C27B0"
+                android:backgroundTint="#26A69A"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:minHeight="84dp"
-                android:text="Mood Log"
+                android:minHeight="48dp"
+                android:text="Confirm"
                 android:textSize="20sp"
                 android:textColor="@android:color/white" />
-
-            <Button
-                android:id="@+id/btn_stoolLog"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="#4CAF50"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:minHeight="84dp"
-                android:text="Stool Log"
-                android:textSize="20sp"
-                android:textColor="@android:color/white" />
-
-
-
-
 
         </LinearLayout>
 

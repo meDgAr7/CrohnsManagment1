@@ -23,6 +23,7 @@ class HomePage : Fragment(R.layout.fragment_home_page), View.OnClickListener {
         view.findViewById<Button>(R.id.btn_foodLog).setOnClickListener(this)
         view.findViewById<Button>(R.id.btn_exerciseLog).setOnClickListener(this)
         view.findViewById<Button>(R.id.btn_moodLog).setOnClickListener(this)
+        view.findViewById<Button>(R.id.btn_stoolLog).setOnClickListener(this)
 
 
 
@@ -33,6 +34,7 @@ class HomePage : Fragment(R.layout.fragment_home_page), View.OnClickListener {
             R.id.btn_foodLog -> navController!!.navigate(R.id.action_homePage_to_foodList)
             R.id.btn_exerciseLog -> navController!!.navigate(R.id.action_homePage_to_exerciseList)
             R.id.btn_moodLog -> navController!!.navigate(R.id.action_homePage_to_moodList)
+            R.id.btn_stoolLog -> navController!!.navigate(R.id.action_homePage_to_stoolList)
 
         }
     }

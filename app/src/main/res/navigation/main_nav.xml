@@ -44,7 +44,7 @@
     <fragment
         android:id="@+id/homePage"
         android:name="com.example.crohnsmanagment1.ui.fragments.homePage.HomePage"
-        android:label="fragment_home_page"
+        android:label="Home"
         tools:layout="@layout/fragment_home_page" >
         <action
             android:id="@+id/action_homePage_to_foodList"
@@ -55,6 +55,9 @@
         <action
             android:id="@+id/action_homePage_to_exerciseList"
             app:destination="@id/exerciseList" />
+        <action
+            android:id="@+id/action_homePage_to_stoolList"
+            app:destination="@id/stoolList" />
     </fragment>
     <fragment
         android:id="@+id/moodList"
@@ -128,4 +131,57 @@
             android:name="selectedExercise"
             app:argType="com.example.crohnsmanagment1.data.models.Exercise" />
     </fragment>
+
+    <fragment
+        android:id="@+id/stoolList"
+        android:name="com.example.crohnsmanagment1.ui.fragments.stoolList.StoolList"
+        android:label="Stool Log"
+        tools:layout="@layout/fragment_stool_list" >
+        <action
+            android:id="@+id/action_stoolList_to_updateStool"
+            app:destination="@id/updateStool" />
+        <action
+            android:id="@+id/action_stoolList_to_addStool"
+            app:destination="@id/addStool" />
+        <action
+            android:id="@+id/action_stoolList_to_homePage"
+            app:destination="@id/homePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/addStool"
+        android:name="com.example.crohnsmanagment1.ui.fragments.addStool.AddStool"
+        android:label="Add Stool Log"
+        tools:layout="@layout/fragment_add_stool" >
+        <action
+            android:id="@+id/action_addStool_to_stoolList"
+            app:destination="@id/stoolList" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateStool"
+        android:name="com.example.crohnsmanagment1.ui.fragments.updateStool.UpdateStool"
+        android:label="Update Stool Log"
+        tools:layout="@layout/fragment_update_stool" >
+        <action
+            android:id="@+id/action_updateStool_to_stoolList"
+            app:destination="@id/stoolList" />
+        <argument
+            android:name="selectedStool"
+            app:argType="com.example.crohnsmanagment1.data.models.Stool" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.example.crohnsmanagment1.ui.fragments.news.News"
+        android:label="News"
+        tools:layout="@layout/fragment_news"/>
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.example.crohnsmanagment1.ui.fragments.stats.Stats"
+        android:label="Stats"
+        tools:layout="@layout/fragment_stats"/>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.crohnsmanagment1.ui.fragments.profile.UserProfile"
+        android:label="Profile"
+        tools:layout="@layout/fragment_user_profile"/>
 </navigation>
