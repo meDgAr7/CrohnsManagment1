@@ -56,7 +56,7 @@ class UpdateStool : Fragment(R.layout.fragment_update_stool),
 
         stoolViewModel = ViewModelProvider(this).get(StoolViewModel::class.java)
 
-        et_stoolTitle_update.setText(args.selectedStool.stool_title)
+        //et_stoolTitle_update.setText(args.selectedStool.stool_title)
         et_stoolDescription_update.setText(args.selectedStool.stool_description)
 
         // drawableSelected() add later
@@ -79,7 +79,7 @@ class UpdateStool : Fragment(R.layout.fragment_update_stool),
         timeStamp = "$cleanDate $cleanTime"
 
         if (!(title.isEmpty() || description.isEmpty() || timeStamp.isEmpty())){
-            val stool = Stool(args.selectedStool.id, title, description, timeStamp)
+            val stool = Stool(args.selectedStool.id, description, timeStamp)
 
             stoolViewModel.updateStool(stool)
             Toast.makeText(context, "Stool updated successfully!", Toast.LENGTH_SHORT).show()

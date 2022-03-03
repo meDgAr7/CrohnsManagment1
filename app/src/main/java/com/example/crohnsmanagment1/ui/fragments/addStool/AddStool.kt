@@ -26,7 +26,7 @@ import java.util.*
 class AddStool : Fragment(R.layout.fragment_add_stool),
     TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
 
-    private var title = ""
+
     private var description = ""
     private var drawableSelected = 0
     private var timeStamp = ""
@@ -58,13 +58,13 @@ class AddStool : Fragment(R.layout.fragment_add_stool),
     }
 
     private fun addStoolToDB(){
-        title = et_stoolTitle.text.toString()
+
         description = et_stoolDescription.text.toString()
 
         timeStamp = "$cleanDate $cleanTime"
 
-        if (!(title.isEmpty() || description.isEmpty() || timeStamp.isEmpty())) {
-            val stool = Stool(0, title, description, timeStamp)
+        if (!(description.isEmpty() || timeStamp.isEmpty())) {
+            val stool = Stool(0, description, timeStamp)
 
             stoolViewModel.addStool(stool)
             Toast.makeText(context, "Stool Added Successfully", Toast.LENGTH_SHORT).show()

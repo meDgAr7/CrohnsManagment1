@@ -9,7 +9,7 @@ import com.example.crohnsmanagment1.logic.dao.StoolDao
 import java.lang.NullPointerException
 import java.security.AccessControlContext
 
-@Database(entities = [Stool::class], version = 1, exportSchema = false)
+@Database(entities = [Stool::class], version = 2, exportSchema = false)
 abstract class StoolDatabase : RoomDatabase() {
     abstract fun stoolDao() : StoolDao
 

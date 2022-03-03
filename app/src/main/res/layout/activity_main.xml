@@ -4,7 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#222222">
+    android:background="#F1EAEA">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_nav_bar"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/main_nav" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/navHostFragment"
+        android:background="@color/purple_700"
+        app:itemBackground="@color/design_default_color_primary"
+        app:itemIconTint="#BCC4ED"
+        app:itemTextColor="#677DF4"
+        app:menu="@menu/bottom_nav_bar" />
 
     <fragment
         android:id="@+id/navHostFragment"
@@ -13,27 +33,6 @@
         android:layout_height="match_parent"
         app:defaultNavHost="true"
         app:navGraph="@navigation/main_nav" />
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/main_nav"
-        android:layout_above="@+id/bottom_nav_bar"/>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_nav_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/navHostFragment"
-        android:background="?android:windowBackground"
-        app:itemBackground="@color/design_default_color_primary"
-        app:itemIconTint="#fff"
-        app:itemTextColor="#fff"
-        app:menu="@menu/bottom_nav_bar" />
-
 
 
 </RelativeLayout>

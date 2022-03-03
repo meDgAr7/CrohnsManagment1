@@ -45,7 +45,7 @@ class StoolListAdapter : RecyclerView.Adapter<StoolListAdapter.MyViewHolder>() {
         val currentStool = stoolList[position]
 
         //holder.itemView.iv_stool
-        holder.itemView.tv_item_title.text = currentStool.stool_title
+       // holder.itemView.tv_item_title.text = currentStool.stool_title
         holder.itemView.tv_item_description.text = currentStool.stool_description
         holder.itemView.tv_timeElapsed.text = Calculations().calculateTimeBetweenDates(currentStool.stool_starTime)
         holder.itemView.tv_item_createdTimeStamp.text = "Added on: ${currentStool.stool_starTime}"

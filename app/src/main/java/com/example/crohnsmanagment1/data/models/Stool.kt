@@ -12,7 +12,7 @@ import kotlinx.android.parcel.Parcelize
 data class Stool(@PrimaryKey(autoGenerate = true)
 
                 val id: Int,
-                val stool_title: String,
+
                 val stool_description: String,
                 val stool_starTime: String,
     //val imageId: Int,

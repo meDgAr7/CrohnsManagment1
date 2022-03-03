@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/white"
     tools:context="ui.fragments.addStool.AddStool">
 
@@ -15,32 +16,16 @@
         <LinearLayout
             android:id="@+id/ll_textviews"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/et_stoolTitle"
+            <TextView
+                android:id="@+id/tv_dateSelected"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:backgroundTint="#26A69A"
-                android:hint="Stool title"
-                android:inputType="text"
-                android:minHeight="48dp"
-                android:textColor="@android:color/black"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/et_stoolDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:backgroundTint="#26A69A"
-                android:hint="Give it a short description"
-                android:inputType="textShortMessage"
-                android:minHeight="48dp"
-                android:textColor="@android:color/black"
+                android:text="Date: (not selected)"
                 android:textSize="20sp" />
 
             <Button
@@ -55,15 +40,15 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:minHeight="48dp"
                 android:text="Pick a date"
-                android:textSize="20sp"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/tv_dateSelected"
+                android:id="@+id/tv_timeSelected"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Date: (not selected)"
+                android:text="Time: (not selected)"
                 android:textSize="20sp" />
 
             <Button
@@ -78,15 +63,134 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:minHeight="48dp"
                 android:text="Pick a time"
-                android:textSize="20sp"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/tv_timeSelected"
+                android:id="@+id/tv_stoolType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Time: (not selected)"
+                android:text="Stool Type"
+                android:textSize="20dp"/>
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup"
+                app:chipSpacingHorizontal="40dp"
+                app:chipSpacingVertical="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_1"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="Type 1"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_2"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Type 2"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_3"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Type 3"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_4"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:text="Type 4"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_5"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Type 5"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_6"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Type 6"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_7"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Type 7"/>
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                android:id="@+id/tv_blood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Blood"
+                android:textSize="20dp"/>
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup1"
+                app:chipSpacingHorizontal="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_b1"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipBackgroundColor="@color/design_default_color_primary"
+                android:clickable="true"
+                android:text="None"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_b2"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Visible"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_b3"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Just Blood"/>
+
+            </com.google.android.material.chip.ChipGroup>
+
+
+            <EditText
+                android:id="@+id/et_stoolDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:backgroundTint="#26A69A"
+                android:hint="Add Notes..."
+                android:inputType="textShortMessage"
+                android:minHeight="48dp"
+                android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
 
@@ -102,8 +206,8 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:minHeight="48dp"
                 android:text="Confirm"
-                android:textSize="20sp"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
