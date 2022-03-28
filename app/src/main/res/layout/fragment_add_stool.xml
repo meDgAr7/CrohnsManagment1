@@ -71,13 +71,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Stool Type"
+                android:text="Stool Type (Bristol Stool Chart)"
                 android:textSize="20dp"/>
 
             <com.google.android.material.chip.ChipGroup
                 android:id="@+id/chipGroup"
                 app:chipSpacingHorizontal="40dp"
                 app:chipSpacingVertical="20dp"
+                app:singleSelection="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -150,6 +151,7 @@
             <com.google.android.material.chip.ChipGroup
                 android:id="@+id/chipGroup1"
                 app:chipSpacingHorizontal="50dp"
+                app:singleSelection="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 

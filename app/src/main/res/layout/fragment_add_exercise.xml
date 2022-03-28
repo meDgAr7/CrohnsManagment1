@@ -31,17 +31,35 @@
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
-            <EditText
-                android:id="@+id/et_exerciseDescription"
+            <TextView
+                android:id="@+id/tv_exercise"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:backgroundTint="#26A69A"
-                android:hint="Give it a short description"
-                android:inputType="textShortMessage"
-                android:minHeight="48dp"
-                android:textColor="@android:color/black"
-                android:textSize="20sp" />
+                android:text="Intensity:"
+                android:textSize="20dp"/>
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/exercise_slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:stepSize="1.0"
+                android:tooltipText="Intensity"
+                android:value="0"
+                android:valueFrom="0"
+                android:valueTo="10" />
+
+            <TextView
+                android:id="@+id/tv_intensity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="0"
+                android:textSize="20dp"/>
+
+
 
             <Button
                 android:id="@+id/btn_pickDate"
@@ -87,6 +105,18 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="Time: (not selected)"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_exerciseDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:backgroundTint="#26A69A"
+                android:hint="Notes"
+                android:inputType="textShortMessage"
+                android:minHeight="48dp"
+                android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
 

@@ -18,19 +18,27 @@ import com.example.crohnsmanagment1.R
 import com.example.crohnsmanagment1.data.models.Mood
 import com.example.crohnsmanagment1.logic.utils.Calculations
 import com.example.crohnsmanagment1.ui.viewmodels.MoodViewModel
+import com.google.android.material.slider.Slider
+import kotlinx.android.synthetic.main.fragment_add_mood.*
 import kotlinx.android.synthetic.main.fragment_update_mood.btn_confirm_update
 import kotlinx.android.synthetic.main.fragment_update_mood.btn_pickDate_update
 import kotlinx.android.synthetic.main.fragment_update_mood.btn_pickTime_update
 import kotlinx.android.synthetic.main.fragment_update_mood.tv_dateSelected_update
 import kotlinx.android.synthetic.main.fragment_update_mood.tv_timeSelected_update
 import kotlinx.android.synthetic.main.fragment_update_mood.*
+import java.text.SimpleDateFormat
 import java.util.*
 
 
 class UpdateMood : Fragment(R.layout.fragment_update_mood),
-    TimePickerDialog.OnTimeSetListener ,DatePickerDialog.OnDateSetListener {
+    TimePickerDialog.OnTimeSetListener ,DatePickerDialog.OnDateSetListener, Slider.OnSliderTouchListener {
 
-    private var title = ""
+    private var rating = 0
+    private var ratingStart = 0
+    private var ratingEnd = 0
+    private var stress = 0
+    private var stressStart = 0
+    private var stressEnd = 0
     private var description = ""
     private var drawableSelected = 0
     private var timeStamp = ""
@@ -52,8 +60,15 @@ class UpdateMood : Fragment(R.layout.fragment_update_mood),
 
         moodViewModel = ViewModelProvider(this).get(MoodViewModel::class.java)
 
-        et_moodTitle_update.setText(args.selectedMood.mood_title)
+        val currentDate: String = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
+        val currentTime = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
+        tv_dateSelected_update.setText(currentDate)
+        tv_timeSelected_update.setText(currentTime)
+
+        //et_moodTitle_update.setText(args.selectedMood.mood_title)
         et_moodDescription_update.setText(args.selectedMood.mood_description)
+        tv_dateSelected_update.setText(args.selectedMood.mood_starTime)
+        tv_timeSelected_update.setText(args.selectedMood.mood_starTime)
 
         // drawableSelected() add later
 
@@ -69,14 +84,14 @@ class UpdateMood : Fragment(R.layout.fragment_update_mood),
     }
 
     private fun updateMood(){
-        title = et_moodTitle_update.text.toString()
         description = et_moodDescription_update.text.toString()
+        rating = ratingEnd.toString().toInt()
+        stress = stressEnd.toString().toInt()
 
         timeStamp = "$cleanDate $cleanTime"
 
-        if (!(title.isEmpty() || description.isEmpty() || timeStamp.isEmpty())){
-            val mood = Mood(args.selectedMood.id, title, description, timeStamp)
-
+        if (!( description.isEmpty() || timeStamp.isEmpty())) {
+            val mood = Mood(0, rating, stress, description, timeStamp)
             moodViewModel.updateMood(mood)
             Toast.makeText(context, "Mood updated successfully!", Toast.LENGTH_SHORT).show()
 
@@ -126,6 +141,16 @@ class UpdateMood : Fragment(R.layout.fragment_update_mood),
         day = cal.get(Calendar.DAY_OF_MONTH)
         month = cal.get(Calendar.MONTH)
         year = cal.get(Calendar.YEAR)
+    }
+
+    override fun onStartTrackingTouch(slider: Slider) {
+
+        ratingStart = slider.value.toInt()
+
+    }
+
+    override fun onStopTrackingTouch(slider: Slider) {
+        ratingEnd = slider.value.toInt()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

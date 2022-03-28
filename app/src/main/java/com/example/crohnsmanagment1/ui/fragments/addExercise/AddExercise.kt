@@ -20,6 +20,8 @@ import kotlinx.android.synthetic.main.fragment_add_exercise.btn_pickDate
 import kotlinx.android.synthetic.main.fragment_add_exercise.btn_pickTime
 import kotlinx.android.synthetic.main.fragment_add_exercise.tv_dateSelected
 import kotlinx.android.synthetic.main.fragment_add_exercise.tv_timeSelected
+import kotlinx.android.synthetic.main.fragment_add_food.*
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -46,6 +48,12 @@ class AddExercise : Fragment(R.layout.fragment_add_exercise),
 
     override fun onViewCreated(view: View,savedInstanceState: Bundle?) {
         exerciseViewModel = ViewModelProvider(this).get(ExerciseViewModel:: class.java)
+
+        val currentDate: String = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
+        val currentTime = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
+
+        tv_dateSelected.setText(currentDate)
+        tv_timeSelected.setText(currentTime)
 
         btn_confirm.setOnClickListener{
             addExerciseToDB()

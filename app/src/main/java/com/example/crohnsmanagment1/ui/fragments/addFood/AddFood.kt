@@ -15,6 +15,8 @@ import com.example.crohnsmanagment1.data.models.Food
 import com.example.crohnsmanagment1.logic.utils.Calculations
 import com.example.crohnsmanagment1.ui.viewmodels.FoodViewModel
 import kotlinx.android.synthetic.main.fragment_add_food.*
+import java.sql.Time
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -41,6 +43,12 @@ class AddFood : Fragment(R.layout.fragment_add_food),
 
     override fun onViewCreated(view: View,savedInstanceState: Bundle?) {
         foodViewModel = ViewModelProvider(this).get(FoodViewModel:: class.java)
+
+        val currentDate: String = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
+        val currentTime = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
+
+        tv_dateSelected.setText(currentDate)
+        tv_timeSelected.setText(currentTime)
 
         btn_confirm.setOnClickListener{
             addFoodToDB()

@@ -77,7 +77,7 @@
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:minHeight="84dp"
-                android:text="Stool Log"
+                android:text="BM Log"
                 android:textSize="20sp"
                 android:textColor="@android:color/white" />
 

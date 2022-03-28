@@ -12,7 +12,8 @@ import kotlinx.android.parcel.Parcelize
 data class Mood(@PrimaryKey(autoGenerate = true)
 
                 val id: Int,
-                val mood_title: String,
+                val mood_rating: Int,
+                val mood_stress: Int,
                 val mood_description: String,
                 val mood_starTime: String,
     //val imageId: Int,

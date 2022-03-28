@@ -21,6 +21,7 @@ import com.example.crohnsmanagment1.logic.utils.Calculations
 import com.example.crohnsmanagment1.ui.viewmodels.FoodViewModel
 import com.example.crohnsmanagment1.ui.viewmodels.StoolViewModel
 import kotlinx.android.synthetic.main.fragment_add_food.*
+import kotlinx.android.synthetic.main.fragment_add_stool.*
 import kotlinx.android.synthetic.main.fragment_update_food.*
 import kotlinx.android.synthetic.main.fragment_update_food.btn_confirm_update
 import kotlinx.android.synthetic.main.fragment_update_food.btn_pickDate_update
@@ -38,6 +39,9 @@ class UpdateStool : Fragment(R.layout.fragment_update_stool),
     private var description = ""
     private var drawableSelected = 0
     private var timeStamp = ""
+
+    private var blood = ""
+    private var type = ""
 
     private var day = 0
     private var month = 0
@@ -57,7 +61,9 @@ class UpdateStool : Fragment(R.layout.fragment_update_stool),
         stoolViewModel = ViewModelProvider(this).get(StoolViewModel::class.java)
 
         //et_stoolTitle_update.setText(args.selectedStool.stool_title)
-        et_stoolDescription_update.setText(args.selectedStool.stool_description)
+        et_stoolDescription_update.setText(args.selectedStool.stool_notes)
+        tv_dateSelected_update.setText(args.selectedStool.stool_starTime)
+        tv_timeSelected_update.setText(args.selectedStool.stool_starTime)
 
         // drawableSelected() add later
 
@@ -67,19 +73,27 @@ class UpdateStool : Fragment(R.layout.fragment_update_stool),
             updateStool()
         }
 
+        chipSelectedType()
+
+        chipSelectedBlood()
+
         setHasOptionsMenu(true)
 
 
     }
 
     private fun updateStool(){
-        title = et_stoolTitle_update.text.toString()
         description = et_stoolDescription_update.text.toString()
+
+        type = chipGroup_update.isSingleSelection.toString()
+        blood = chipGroup1_update.isSingleSelection.toString()
+
+
 
         timeStamp = "$cleanDate $cleanTime"
 
-        if (!(title.isEmpty() || description.isEmpty() || timeStamp.isEmpty())){
-            val stool = Stool(args.selectedStool.id, description, timeStamp)
+        if (!(description.isEmpty() ||blood.isEmpty() || type.isEmpty() || timeStamp.isEmpty())) {
+            val stool = Stool(0, description, timeStamp, type, blood)
 
             stoolViewModel.updateStool(stool)
             Toast.makeText(context, "Stool updated successfully!", Toast.LENGTH_SHORT).show()
@@ -93,6 +107,31 @@ class UpdateStool : Fragment(R.layout.fragment_update_stool),
 
 
     //private fun drawableSelected() add later
+
+    //select stool type
+    private fun chipSelectedType(){
+
+        when(chipGroup_update){
+            chip_1_update -> type = "Type 1"
+            chip_2_update -> type = "Type 2"
+            chip_3_update -> type = "Type 3"
+            chip_4_update -> type = "Type 4"
+            chip_5_update -> type = "Type 5"
+            chip_6_update -> type = "Type 6"
+            chip_7_update -> type = "Type 7"
+        }
+    }
+
+    //select blood option
+    private fun chipSelectedBlood(){
+
+        when(chipGroup1_update){
+            chip_b1_update -> blood = "None"
+            chip_b2_update -> blood = "Visible"
+            chip_b3_update -> blood = "Just Blood"
+        }
+
+    }
 
     private fun pickDateAndTime(){
         btn_pickDate_update.setOnClickListener{

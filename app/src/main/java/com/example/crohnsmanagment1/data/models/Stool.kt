@@ -13,7 +13,9 @@ data class Stool(@PrimaryKey(autoGenerate = true)
 
                 val id: Int,
 
-                val stool_description: String,
+                val stool_notes: String,
                 val stool_starTime: String,
+                val stool_type: String,
+                val stool_blood: String,
     //val imageId: Int,
 ) : Parcelable

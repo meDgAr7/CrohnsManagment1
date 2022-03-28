@@ -5,9 +5,8 @@ import android.app.TimePickerDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
-import android.widget.DatePicker
-import android.widget.TimePicker
-import android.widget.Toast
+import android.widget.*
+import android.widget.SeekBar.*
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.crohnsmanagment1.R
@@ -22,12 +21,20 @@ import kotlinx.android.synthetic.main.fragment_add_mood.tv_dateSelected
 import kotlinx.android.synthetic.main.fragment_add_mood.tv_timeSelected
 import kotlinx.android.synthetic.main.fragment_add_mood.*
 import java.util.*
+import com.google.android.material.slider.Slider
+import kotlinx.android.synthetic.main.fragment_add_food.*
+import java.text.SimpleDateFormat
 
 
 class AddMood : Fragment(R.layout.fragment_add_mood),
-    TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
+    TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener, OnSeekBarChangeListener{
 
-    private var title = ""
+    private var rating  = 0
+    private var ratingStart : TextView? = null
+    private var ratingEnd : TextView? = null
+    private var stress  = 0
+    private var stressStart : TextView? = null
+    private var stressEnd : TextView? = null
     private var description = ""
     private var drawableSelected = 0
     private var timeStamp = ""
@@ -48,24 +55,43 @@ class AddMood : Fragment(R.layout.fragment_add_mood),
     override fun onViewCreated(view: View,savedInstanceState: Bundle?) {
         moodViewModel = ViewModelProvider(this).get(MoodViewModel:: class.java)
 
+        val currentDate: String = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
+        val currentTime = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
+
+        tv_dateSelected.setText(currentDate)
+        tv_timeSelected.setText(currentTime)
+
+        ratingEnd = this.tv_mood_rating
+
+        stressEnd = this.tv_stress_rating
+
         btn_confirm.setOnClickListener{
             addMoodToDB()
         }
 
         pickDateAndTime()
 
+
+        this.mood_seek!!.setOnSeekBarChangeListener(this)
+        mood_seek.setMax(5)
+
+        this.stress_seek!!.setOnSeekBarChangeListener(this)
+        stress_seek.setMax(10)
+
         // drawableSelected()
 
     }
 
     private fun addMoodToDB(){
-        title = et_moodTitle.text.toString()
+
         description = et_moodDescription.text.toString()
+        //rating = ratingEnd.toString().toInt()
+        //stress = stressEnd.
 
         timeStamp = "$cleanDate $cleanTime"
 
-        if (!(title.isEmpty() || description.isEmpty() || timeStamp.isEmpty())) {
-            val mood = Mood(0, title, description, timeStamp)
+        if (!( description.isEmpty() || timeStamp.isEmpty())) {
+            val mood = Mood(0, rating,stress, description, timeStamp)
 
             moodViewModel.addMood(mood)
             Toast.makeText(context, "Mood Added Successfully", Toast.LENGTH_SHORT).show()
@@ -80,6 +106,10 @@ class AddMood : Fragment(R.layout.fragment_add_mood),
     //  private fun drawableSelected(){
 
     // }
+
+
+
+
 
 
     private fun pickDateAndTime(){
@@ -122,5 +152,39 @@ class AddMood : Fragment(R.layout.fragment_add_mood),
     }
 
 
+    //Set values for mood rating & stress levels
+    override fun onProgressChanged(seek: SeekBar?, progress: Int, fromUser: Boolean) {
+        if(seek?.equals(mood_seek) == true) {
+            ratingEnd!!.text = progress.toString()
+        }else if(seek?.equals(stress_seek) == true){
+            stressEnd!!.text = progress.toString()
+        }
+
+    }
+
+    override fun onStartTrackingTouch(seek: SeekBar) {
+        if(seek?.equals(mood_seek) == true){
+
+        }else if(seek?.equals(stress_seek) == true){
+
+        }
+    }
+
+    override fun onStopTrackingTouch(seek: SeekBar) {
+
+        if(seek?.equals(mood_seek) == true){
+            rating = ratingEnd!!.text.toString().toInt()
+
+        }else if(seek?.equals(stress_seek) == true){
+
+            stress = stressEnd!!.text.toString().toInt()
+        }
+    }
+
+
+
+
 
 }
+
+

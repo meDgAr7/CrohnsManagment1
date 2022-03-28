@@ -35,16 +35,18 @@ class MoodListAdapter : RecyclerView.Adapter<MoodListAdapter.MyViewHolder>() {
         parent: ViewGroup,
         viewType: Int
     ): MoodListAdapter.MyViewHolder {
-        return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.recycler_food_item, parent, false))
+        return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.recycler_mood_item, parent, false))
     }
 
     override fun onBindViewHolder(holder: MoodListAdapter.MyViewHolder, position: Int) {
         val currentMood = moodList[position]
 
         //holder.itemView.iv_mood
-        holder.itemView.tv_item_title.text = currentMood.mood_title
+
+        holder.itemView.tv_item_moodRating.text = "Mood Rating: ${currentMood.mood_rating}"
+        holder.itemView.tv_item_stress.text = "Stress Level: ${currentMood.mood_stress}"
         holder.itemView.tv_item_description.text = currentMood.mood_description
-        holder.itemView.tv_timeElapsed.text = Calculations().calculateTimeBetweenDates(currentMood.mood_starTime)
+        //holder.itemView.tv_timeElapsed.text = Calculations().calculateTimeBetweenDates(currentMood.mood_starTime)
         holder.itemView.tv_item_createdTimeStamp.text = "Added on: ${currentMood.mood_starTime}"
 
     }

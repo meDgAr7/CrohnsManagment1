@@ -19,17 +19,92 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/et_moodTitle"
+            <TextView
+                android:id="@+id/tv_mood"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:backgroundTint="#26A69A"
-                android:hint="Mood title"
-                android:inputType="text"
-                android:minHeight="48dp"
-                android:textColor="@android:color/black"
-                android:textSize="20sp" />
+                android:text="How Do You Feel?"
+                android:textSize="20dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Really not good"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="not good"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:text="neutral"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:text="Good"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:text="real good!"/>
+
+            <SeekBar
+                android:id="@+id/mood_seek"
+                android:scrollbarSize="20dp"
+                android:tooltipText="How are you feeling?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_mood_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="0"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/tv_stress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Stress Level"
+                android:textSize="20dp"/>
+
+
+            <SeekBar
+                android:id="@+id/stress_seek"
+                android:scrollbarSize="20dp"
+                android:tooltipText="Stress Level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_stress_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="0"
+                android:textSize="20dp"/>
 
             <EditText
                 android:id="@+id/et_moodDescription"
@@ -37,8 +112,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:backgroundTint="#26A69A"
-                android:hint="Give it a short description"
-                android:inputType="textShortMessage"
+                android:hint="Notes"
+                android:inputType="textLongMessage"
                 android:minHeight="48dp"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
@@ -95,12 +170,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:paddingBottom="50dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="#26A69A"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:minHeight="48dp"
+                android:maxHeight="48dp"
                 android:text="Confirm"
                 android:textSize="20sp"
                 android:textColor="@android:color/white" />

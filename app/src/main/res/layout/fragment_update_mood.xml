@@ -3,13 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.updateMood.UpdateMood"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    tools:context="ui.fragments.updateMood.UpdateMood">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
+
 
         <LinearLayout
             android:id="@+id/ll_textviews_update"
@@ -18,17 +19,62 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/et_moodTitle_update"
+            <TextView
+                android:id="@+id/tv_mood_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:backgroundTint="#26A69A"
-                android:hint="Mood title"
-                android:inputType="text"
-                android:minHeight="48dp"
-                android:textColor="@android:color/black"
-                android:textSize="20sp" />
+                android:text="How Do You Feel?"
+                android:textSize="20dp"/>
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/mood_slider_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:stepSize="1.0"
+                android:tooltipText="Mood Rating"
+                android:value="5"
+                android:valueFrom="0"
+                android:valueTo="10" />
+
+            <TextView
+                android:id="@+id/tv_mood_rating_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="0"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/tv_stress_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Stress Level"
+                android:textSize="20dp"/>
+
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/stress_slider_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:stepSize="1.0"
+                android:tooltipText="Mood Rating"
+                android:value="5"
+                android:valueFrom="0"
+                android:valueTo="10" />
+
+            <TextView
+                android:id="@+id/tv_stress_rating_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="0"
+                android:textSize="20dp"/>
 
             <EditText
                 android:id="@+id/et_moodDescription_update"
@@ -36,8 +82,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:backgroundTint="#26A69A"
-                android:hint="Give it a short description"
-                android:inputType="textShortMessage"
+                android:hint="How are you feeling?"
+                android:inputType="textLongMessage"
                 android:minHeight="48dp"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
