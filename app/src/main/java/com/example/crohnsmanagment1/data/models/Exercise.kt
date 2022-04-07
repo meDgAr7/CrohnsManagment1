@@ -12,6 +12,9 @@ import kotlinx.android.parcel.Parcelize
 data class Exercise(@PrimaryKey(autoGenerate = true)
 
                 val id: Int,
+                    val exercise_intensity: Int,
+                    val exercise_duration: Float,
+
                 val exercise_title: String,
                 val exercise_description: String,
                 val exercise_starTime: String,

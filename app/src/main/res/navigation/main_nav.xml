@@ -58,6 +58,12 @@
         <action
             android:id="@+id/action_homePage_to_stoolList"
             app:destination="@id/stoolList" />
+        <action
+            android:id="@+id/action_homePage_to_statsFragment"
+            app:destination="@id/statsFragment" />
+        <action
+            android:id="@+id/action_homePage_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/moodList"
@@ -178,10 +184,131 @@
         android:id="@+id/statsFragment"
         android:name="com.example.crohnsmanagment1.ui.fragments.stats.Stats"
         android:label="Stats"
-        tools:layout="@layout/fragment_stats"/>
+        tools:layout="@layout/fragment_stats">
+        <action
+            android:id="@+id/action_statsFragment_to_exerciseGraph"
+            app:destination="@id/exerciseGraph" />
+        <action
+            android:id="@+id/action_statsFragment_to_moodGraph"
+            app:destination="@id/moodGraph" />
+        <action
+            android:id="@+id/action_statsFragment_to_stoolGraph"
+            app:destination="@id/stoolGraph" />
+        <action
+            android:id="@+id/action_statsFragment_to_weightGraph"
+            app:destination="@id/weightGraph" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.crohnsmanagment1.ui.fragments.profile.UserProfile"
         android:label="Profile"
-        tools:layout="@layout/fragment_user_profile"/>
+        tools:layout="@layout/fragment_user_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_addWeight"
+            app:destination="@id/addWeight" />
+        <action
+            android:id="@+id/action_profileFragment_to_weightGraph"
+            app:destination="@id/weightGraph" />
+        <action
+            android:id="@+id/action_profileFragment_to_addMedication"
+            app:destination="@id/addMedication" />
+        <action
+            android:id="@+id/action_profileFragment_to_addAppointment"
+            app:destination="@id/addAppointment" />
+        <action
+            android:id="@+id/action_profileFragment_to_addNote"
+            app:destination="@id/addNote" />
+        <action
+            android:id="@+id/action_profileFragment_to_medicationList"
+            app:destination="@id/medicationList" />
+        <action
+            android:id="@+id/action_profileFragment_to_appointmentList"
+            app:destination="@id/appointmentList" />
+        <action
+            android:id="@+id/action_profileFragment_to_notesList"
+            app:destination="@id/notesList" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseGraph"
+        android:name="com.example.crohnsmanagment1.ui.fragments.stats.ExerciseGraph"
+        android:label="fragment_exercise_graph"
+        tools:layout="@layout/fragment_exercise_graph" />
+    <fragment
+        android:id="@+id/moodGraph"
+        android:name="com.example.crohnsmanagment1.ui.fragments.stats.MoodGraph"
+        android:label="fragment_mood_graph"
+        tools:layout="@layout/fragment_mood_graph" />
+    <fragment
+        android:id="@+id/stoolGraph"
+        android:name="com.example.crohnsmanagment1.ui.fragments.stats.StoolGraph"
+        android:label="fragment_stool_graph"
+        tools:layout="@layout/fragment_stool_graph" />
+    <fragment
+        android:id="@+id/weightGraph"
+        android:name="com.example.crohnsmanagment1.ui.fragments.stats.WeightGraph"
+        android:label="fragment_weight_graph"
+        tools:layout="@layout/fragment_weight_graph" />
+    <fragment
+        android:id="@+id/addWeight"
+        android:name="com.example.crohnsmanagment1.ui.fragments.profile.AddWeight"
+        android:label="fragment_add_weight"
+        tools:layout="@layout/fragment_add_weight" >
+        <action
+            android:id="@+id/action_addWeight_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/medicationList"
+        android:name="com.example.crohnsmanagment1.ui.fragments.profile.MedicationList"
+        android:label="fragment_medication_list"
+        tools:layout="@layout/fragment_medication_list" >
+        <action
+            android:id="@+id/action_medicationList_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMedication"
+        android:name="com.example.crohnsmanagment1.ui.fragments.profile.AddMedication"
+        android:label="fragment_add_medication"
+        tools:layout="@layout/fragment_add_medication" >
+        <action
+            android:id="@+id/action_addMedication_to_medicationList"
+            app:destination="@id/medicationList" />
+    </fragment>
+    <fragment
+        android:id="@+id/appointmentList"
+        android:name="com.example.crohnsmanagment1.ui.fragments.profile.AppointmentList"
+        android:label="fragment_appointment_list"
+        tools:layout="@layout/fragment_appointment_list" >
+        <action
+            android:id="@+id/action_appointmentList_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAppointment"
+        android:name="com.example.crohnsmanagment1.ui.fragments.profile.AddAppointment"
+        android:label="fragment_add_appointment"
+        tools:layout="@layout/fragment_add_appointment" >
+        <action
+            android:id="@+id/action_addAppointment_to_appointmentList"
+            app:destination="@id/appointmentList" />
+    </fragment>
+    <fragment
+        android:id="@+id/notesList"
+        android:name="com.example.crohnsmanagment1.ui.fragments.profile.NotesList"
+        android:label="fragment_notes_list"
+        tools:layout="@layout/fragment_notes_list" >
+        <action
+            android:id="@+id/action_notesList_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNote"
+        android:name="com.example.crohnsmanagment1.ui.fragments.profile.AddNote"
+        android:label="fragment_add_note"
+        tools:layout="@layout/fragment_add_note" >
+        <action
+            android:id="@+id/action_addNote_to_notesList"
+            app:destination="@id/notesList" />
+    </fragment>
 </navigation>

@@ -5,9 +5,7 @@ import android.app.TimePickerDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
-import android.widget.DatePicker
-import android.widget.TimePicker
-import android.widget.Toast
+import android.widget.*
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.crohnsmanagment1.R
@@ -21,17 +19,23 @@ import kotlinx.android.synthetic.main.fragment_add_exercise.btn_pickTime
 import kotlinx.android.synthetic.main.fragment_add_exercise.tv_dateSelected
 import kotlinx.android.synthetic.main.fragment_add_exercise.tv_timeSelected
 import kotlinx.android.synthetic.main.fragment_add_food.*
+import kotlinx.android.synthetic.main.fragment_add_mood.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 
 class AddExercise : Fragment(R.layout.fragment_add_exercise),
-    TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
+    TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener, SeekBar.OnSeekBarChangeListener {
 
     private var title = ""
-    private var description = ""
+    private var notes = ""
+    private var intensity = 0
+    private var intensity_start : TextView? = null
+    private var intensity_end : TextView? = null
+    private var duration = Float.NaN
     private var drawableSelected = 0
     private var timeStamp = ""
+
 
     private var day = 0
     private var month = 0
@@ -55,11 +59,18 @@ class AddExercise : Fragment(R.layout.fragment_add_exercise),
         tv_dateSelected.setText(currentDate)
         tv_timeSelected.setText(currentTime)
 
+         intensity_end = this.tv_intensity
+
+        this.intensity_seek!!.setOnSeekBarChangeListener(this)
+        intensity_seek.setMax(10)
+
         btn_confirm.setOnClickListener{
             addExerciseToDB()
         }
 
         pickDateAndTime()
+
+        setDuration()
 
         // drawableSelected()
 
@@ -67,12 +78,12 @@ class AddExercise : Fragment(R.layout.fragment_add_exercise),
 
     private fun addExerciseToDB(){
         title = et_exerciseTitle.text.toString()
-        description = et_exerciseDescription.text.toString()
+        notes = et_exerciseDescription.text.toString()
 
         timeStamp = "$cleanDate $cleanTime"
 
-        if (!(title.isEmpty() || description.isEmpty() || timeStamp.isEmpty())) {
-            val exercise = Exercise(0, title, description, timeStamp)
+        if (!(title.isEmpty() ||   timeStamp.isEmpty())) {
+            val exercise = Exercise(0, intensity, duration, title, notes, timeStamp)
 
             exerciseViewModel.addExercise(exercise)
             Toast.makeText(context, "Exercise Added Successfully", Toast.LENGTH_SHORT).show()
@@ -87,6 +98,21 @@ class AddExercise : Fragment(R.layout.fragment_add_exercise),
     //  private fun drawableSelected(){
 
     // }
+
+    private fun setDuration(){
+        val cal = Calendar.getInstance()
+
+        val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
+            cal.set(Calendar.HOUR_OF_DAY, hour)
+            cal.set(Calendar.MINUTE, minute)
+
+            tv_durationSet.text = SimpleDateFormat("HH:mm").format(cal.time)
+        }
+
+        tv_durationSet.setOnClickListener {
+            TimePickerDialog(context, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
+        }
+    }
 
 
     private fun pickDateAndTime(){
@@ -128,6 +154,17 @@ class AddExercise : Fragment(R.layout.fragment_add_exercise),
         year = cal.get(Calendar.YEAR)
     }
 
+    override fun onProgressChanged(seek: SeekBar?, progress: Int, fromUser: Boolean) {
+       intensity_end!!.text = progress.toString()
+    }
+
+    override fun onStartTrackingTouch(p0: SeekBar?) {
+
+    }
+
+    override fun onStopTrackingTouch(seek: SeekBar?) {
+        intensity = intensity_end!!.text.toString().toInt()
+    }
 
 
 }

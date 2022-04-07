@@ -8,81 +8,94 @@
     android:orientation="horizontal">
 
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FFFFFF"
-        android:clickable="true"
-        android:focusable="true"
-        app:cardCornerRadius="8dp">
-
-
-
+        android:layout_margin="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:gravity="center"
             android:orientation="vertical">
+
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="16dp">
 
 
                 <TextView
-                    android:id="@+id/tv_item_title"
+                    android:id="@+id/tv_item_exerciseTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Title Big"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/black"
-                    android:textSize="24sp" />
-
+                    android:text="Title"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    />
 
                 <TextView
-                    android:id="@+id/tv_timeElapsed"
+                    android:id="@+id/tv_item_intensity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    tools:text="12 days ago" />
+                    android:text="Intensity Level:"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    />
 
-                <View
+                <TextView
+                    android:id="@+id/tv_item_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    />
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginVertical="4dp"
-                    android:background="@android:color/black" />
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="4dp"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_item_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="This is a test of the notes that can be added to each reading."
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?android:attr/textColorSecondary"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_item_createdTimeStamp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Recorded 12/12/22 at 22:00"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?android:attr/textColorSecondary"
+                    />
+
+
+
             </LinearLayout>
-
-
-            <TextView
-                android:id="@+id/tv_item_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:maxLines="4"
-                android:textColor="@android:color/black"
-                android:textSize="14sp"
-                tools:text="This is a test description the you can add to each item. It should be short though. 2 lines max*" />
-
-            <TextView
-                android:id="@+id/tv_item_createdTimeStamp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:maxLines="2"
-                android:textColor="@android:color/black"
-                android:textSize="12sp"
-                tools:text="Created 12/12/20 at 20:00" />
-
 
         </LinearLayout>
 
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </LinearLayout>

@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.DatePicker
 import android.widget.TimePicker
 import android.widget.Toast
+import androidx.core.view.ViewCompat.setAutofillHints
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.crohnsmanagment1.R
@@ -17,10 +18,8 @@ import com.example.crohnsmanagment1.ui.viewmodels.StoolViewModel
 import com.google.android.material.chip.ChipGroup
 import kotlinx.android.synthetic.main.fragment_add_food.*
 import kotlinx.android.synthetic.main.fragment_add_stool.btn_confirm
-import kotlinx.android.synthetic.main.fragment_add_stool.btn_pickDate
-import kotlinx.android.synthetic.main.fragment_add_stool.btn_pickTime
-import kotlinx.android.synthetic.main.fragment_add_stool.tv_dateSelected
-import kotlinx.android.synthetic.main.fragment_add_stool.tv_timeSelected
+
+
 import kotlinx.android.synthetic.main.fragment_add_stool.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -55,8 +54,10 @@ class AddStool : Fragment(R.layout.fragment_add_stool),
         val currentDate: String = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
         val currentTime = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
 
-        tv_dateSelected.setText(currentDate)
-        tv_timeSelected.setText(currentTime)
+        tv_dateSelectedStool.setText("Date: ${currentDate}")
+        tv_timeSelectedStool.setText("Time: ${currentTime}")
+
+
 
         btn_confirm.setOnClickListener{
             addStoolToDB()
@@ -65,9 +66,9 @@ class AddStool : Fragment(R.layout.fragment_add_stool),
 
         pickDateAndTime()
 
-        chipSelectedType()
+        getStoolType()
 
-        chipSelectedBlood()
+        getStoolBlood()
 
         // drawableSelected()
 
@@ -77,8 +78,8 @@ class AddStool : Fragment(R.layout.fragment_add_stool),
 
         description = et_stoolDescription.text.toString()
 
-        type = chipGroup.isSingleSelection.toString()
-        blood = chipGroup1.isSingleSelection.toString()
+        //type = tv_type.text.toString()
+        //blood = tv_blood.text.toString()
 
 
 
@@ -103,39 +104,65 @@ class AddStool : Fragment(R.layout.fragment_add_stool),
 
 
     //select stool type
-    private fun chipSelectedType(){
 
-        when(chipGroup){
-            chip_1 -> type = "Type 1"
-            chip_2 -> type = "Type 2"
-            chip_3 -> type = "Type 3"
-            chip_4 -> type = "Type 4"
-            chip_5 -> type = "Type 5"
-            chip_6 -> type = "Type 6"
-            chip_7 -> type = "Type 7"
+    private fun getStoolType(){
+
+        rg_StoolType.setOnCheckedChangeListener { rg_StoolType, checkId ->
+            if(checkId == R.id.rbType1){
+                type = "Type 1"
+
+            }
+            if(checkId == R.id.rbType2) {
+                type = "Type 2"
+
+            }
+            if(checkId == R.id.rbType3){
+                type = "Type 3"
+            }
+            if(checkId == R.id.rbType4){
+                type = "Type 4"
+
+            }
+            if(checkId == R.id.rbType5){
+                type = "Type 5"
+
+            }
+            if(checkId == R.id.rbType6){
+                type = "Type 6"
+
+            }
+            if(checkId == R.id.rbType7){
+                type = "Type 7"
+
+            }
         }
     }
 
-    //select blood option
-    private fun chipSelectedBlood(){
+    private fun getStoolBlood(){
+        rg_Blood.setOnCheckedChangeListener { rg_Blood, checkId ->
+            if(checkId == R.id.rbBlood1){
+                blood = "No Blood"
 
-        when(chipGroup1){
-            chip_b1 -> blood = "None"
-            chip_b2 -> blood = "Visible"
-            chip_b3 -> blood = "Just Blood"
+            }
+            if(checkId == R.id.rbBlood2){
+
+                blood = "Visible Blood"
+            }
+            if(checkId == R.id.rbBlood3){
+                blood = "Just Blood"
+            }
         }
-
     }
 
 
     private fun pickDateAndTime(){
-        btn_pickDate.setOnClickListener{
+        tv_dateSelectedStool.setOnClickListener{
             getDateCalendar()
             DatePickerDialog(requireContext(),this, year, month, day).show()
         }
 
-        btn_pickTime.setOnClickListener{
-            getTimeCalendar()
+        tv_timeSelectedStool.setOnClickListener{
+           getTimeCalendar()
             TimePickerDialog(context, this, hour, minute,true).show()
         }
     }
@@ -145,12 +172,12 @@ class AddStool : Fragment(R.layout.fragment_add_stool),
     override fun onTimeSet(p0: TimePicker?, p1: Int, p2: Int) {
 
         cleanTime = Calculations().cleanTime(p1, p2)
-        tv_timeSelected.text = "Time: $cleanTime"
+        tv_timeSelectedStool.text = "Time: $cleanTime"
     }
 
     override fun onDateSet(p0: DatePicker?, yearX: Int, monthX: Int, dayX: Int) {
         cleanDate = Calculations().cleanDate(dayX, monthX, yearX)
-        tv_dateSelected.text = "Date: $cleanDate"
+        tv_dateSelectedStool.text = "Date: $cleanDate"
     }
 
     private fun getTimeCalendar(){

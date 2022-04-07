@@ -27,17 +27,12 @@
                 android:text="How Do You Feel?"
                 android:textSize="20dp"/>
 
-            <com.google.android.material.slider.Slider
-                android:id="@+id/mood_slider_update"
+            <SeekBar
+                android:id="@+id/mood_seek_update"
+                android:scrollbarSize="20dp"
+                android:tooltipText="How are you feeling?"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:stepSize="1.0"
-                android:tooltipText="Mood Rating"
-                android:value="5"
-                android:valueFrom="0"
-                android:valueTo="10" />
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/tv_mood_rating_update"
@@ -56,17 +51,12 @@
                 android:textSize="20dp"/>
 
 
-            <com.google.android.material.slider.Slider
-                android:id="@+id/stress_slider_update"
+            <SeekBar
+                android:id="@+id/stress_seek_update"
+                android:scrollbarSize="20dp"
+                android:tooltipText="Stress Level"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:stepSize="1.0"
-                android:tooltipText="Mood Rating"
-                android:value="5"
-                android:valueFrom="0"
-                android:valueTo="10" />
+                android:layout_height="wrap_content"/>
 
             <TextView
                 android:id="@+id/tv_stress_rating_update"

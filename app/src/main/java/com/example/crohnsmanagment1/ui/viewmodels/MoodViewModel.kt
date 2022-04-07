@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.example.crohnsmanagment1.data.database.MoodDatabase
+import com.example.crohnsmanagment1.data.database.CrohnsDatabase
 import com.example.crohnsmanagment1.data.models.Mood
 import com.example.crohnsmanagment1.logic.dao.MoodDao
 import com.example.crohnsmanagment1.logic.repository.MoodRepository
@@ -17,7 +17,7 @@ class MoodViewModel(application: Application) : AndroidViewModel(application){
     val getAllMood : LiveData<List<Mood>>
 
     init {
-        val moodDao = MoodDatabase.getDatabase(application).moodDao()
+        val moodDao = CrohnsDatabase.getDatabase(application).moodDao()
         repository = MoodRepository(moodDao)
 
         getAllMood = repository.getAllMood

@@ -8,6 +8,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.DatePicker
+import android.widget.SeekBar
 import android.widget.TimePicker
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -31,7 +32,7 @@ import java.util.*
 
 
 class UpdateMood : Fragment(R.layout.fragment_update_mood),
-    TimePickerDialog.OnTimeSetListener ,DatePickerDialog.OnDateSetListener, Slider.OnSliderTouchListener {
+    TimePickerDialog.OnTimeSetListener ,DatePickerDialog.OnDateSetListener, SeekBar.OnSeekBarChangeListener {
 
     private var rating = 0
     private var ratingStart = 0
@@ -64,6 +65,9 @@ class UpdateMood : Fragment(R.layout.fragment_update_mood),
         val currentTime = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
         tv_dateSelected_update.setText(currentDate)
         tv_timeSelected_update.setText(currentTime)
+
+        mood_seek_update.setProgress(args.selectedMood.mood_rating)
+        stress_seek_update.setProgress(args.selectedMood.mood_stress)
 
         //et_moodTitle_update.setText(args.selectedMood.mood_title)
         et_moodDescription_update.setText(args.selectedMood.mood_description)
@@ -143,14 +147,31 @@ class UpdateMood : Fragment(R.layout.fragment_update_mood),
         year = cal.get(Calendar.YEAR)
     }
 
-    override fun onStartTrackingTouch(slider: Slider) {
+    override fun onProgressChanged(seek: SeekBar?, progress: Int, fromUser: Boolean) {
+        if(seek?.equals(mood_seek) == true) {
 
-        ratingStart = slider.value.toInt()
+        }else if(seek?.equals(stress_seek) == true){
+
+        }
 
     }
 
-    override fun onStopTrackingTouch(slider: Slider) {
-        ratingEnd = slider.value.toInt()
+    override fun onStartTrackingTouch(seek: SeekBar) {
+        if(seek?.equals(mood_seek) == true){
+
+        }else if(seek?.equals(stress_seek) == true){
+
+        }
+    }
+
+    override fun onStopTrackingTouch(seek: SeekBar) {
+
+        if(seek?.equals(mood_seek) == true){
+
+        }else if(seek?.equals(stress_seek) == true){
+
+
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

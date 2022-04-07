@@ -21,22 +21,12 @@
             tools:itemCount="20"
             tools:listitem="@layout/recycler_stool_item" />
 
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_add"
-        android:layout_width="92dp"
-        android:layout_height="99dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:src="@drawable/ic_add"
-        android:contentDescription="Record Stool" />
+
+
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <TextView
         android:id="@+id/tv_emptyView"
@@ -48,6 +38,20 @@
         android:textSize="20sp"
         android:textStyle="italic"
         android:visibility="gone" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="523dp"
+        android:layout_marginEnd="331dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:contentDescription="Record Stool"
+        android:focusable="true"
+        android:src="@drawable/ic_add"
+        android:visibility="visible" />
 
 
 </RelativeLayout>

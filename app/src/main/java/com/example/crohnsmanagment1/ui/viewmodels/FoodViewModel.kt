@@ -4,9 +4,8 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.example.crohnsmanagment1.data.database.FoodDatabase
+import com.example.crohnsmanagment1.data.database.CrohnsDatabase
 import com.example.crohnsmanagment1.data.models.Food
-import com.example.crohnsmanagment1.logic.dao.FoodDao
 import com.example.crohnsmanagment1.logic.repository.FoodRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -17,7 +16,7 @@ class FoodViewModel(application: Application) : AndroidViewModel(application){
     val getAllFood : LiveData<List<Food>>
 
     init {
-        val foodDao = FoodDatabase.getDatabase(application).foodDao()
+        val foodDao = CrohnsDatabase.getDatabase(application).foodDao()
         repository = FoodRepository(foodDao)
 
         getAllFood = repository.getAllFood

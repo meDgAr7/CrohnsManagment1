@@ -42,9 +42,11 @@ class ExerciseListAdapter : RecyclerView.Adapter<ExerciseListAdapter.MyViewHolde
         val currentExercise = exerciseList[position]
 
         //holder.itemView.iv_exercise
-        holder.itemView.tv_item_title.text = currentExercise.exercise_title
+        holder.itemView.tv_item_exerciseTitle.text = currentExercise.exercise_title
+        holder.itemView.tv_item_intensity.text = "Intensity Level: ${currentExercise.exercise_intensity}"
+        holder.itemView.tv_item_duration.text = "Duration: ${currentExercise.exercise_duration}"
         holder.itemView.tv_item_description.text = currentExercise.exercise_description
-        holder.itemView.tv_timeElapsed.text = Calculations().calculateTimeBetweenDates(currentExercise.exercise_starTime)
+
         holder.itemView.tv_item_createdTimeStamp.text = "Added on: ${currentExercise.exercise_starTime}"
 
     }

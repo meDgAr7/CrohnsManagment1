@@ -39,17 +39,12 @@
                 android:text="Intensity:"
                 android:textSize="20dp"/>
 
-            <com.google.android.material.slider.Slider
-                android:id="@+id/exercise_slider"
+            <SeekBar
+                android:id="@+id/intensity_seek"
+                android:scrollbarSize="20dp"
+                android:tooltipText="How are you feeling?"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:stepSize="1.0"
-                android:tooltipText="Intensity"
-                android:value="0"
-                android:valueFrom="0"
-                android:valueTo="10" />
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/tv_intensity"
@@ -57,7 +52,24 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="0"
-                android:textSize="20dp"/>
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/tv_duration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Duration:"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/tv_durationSet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textIsSelectable="true"
+                android:text="00:00"
+                android:textSize="20sp"/>
 
 
 

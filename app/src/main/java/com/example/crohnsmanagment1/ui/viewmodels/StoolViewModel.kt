@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.example.crohnsmanagment1.data.database.StoolDatabase
+import com.example.crohnsmanagment1.data.database.CrohnsDatabase
 import com.example.crohnsmanagment1.data.models.Stool
 import com.example.crohnsmanagment1.logic.repository.StoolRepository
 import kotlinx.coroutines.Dispatchers
@@ -16,7 +16,7 @@ class StoolViewModel(application: Application) : AndroidViewModel(application){
     val getAllStool : LiveData<List<Stool>>
 
     init {
-        val stoolDao = StoolDatabase.getDatabase(application).stoolDao()
+        val stoolDao = CrohnsDatabase.getDatabase(application).stoolDao()
         repository = StoolRepository(stoolDao)
 
         getAllStool = repository.getAllStool

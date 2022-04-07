@@ -20,51 +20,33 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_dateSelected"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="Date: (not selected)"
-                android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/btn_pickDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="#EF5350"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:minHeight="48dp"
-                android:text="Pick a date"
-                android:textColor="@android:color/white"
-                android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/tv_timeSelected"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="Time: (not selected)"
-                android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/tv_timeSelectedStool"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="left"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/border"
+                    android:text="Time: (not selected)"
+                    android:textSize="25sp" />
 
-            <Button
-                android:id="@+id/btn_pickTime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="#42A5F5"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:minHeight="48dp"
-                android:text="Pick a time"
-                android:textColor="@android:color/white"
-                android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/tv_dateSelectedStool"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="left"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/border"
+                    android:text="Date: (not selected)"
+                    android:textSize="25sp" />
+
+
 
             <TextView
                 android:id="@+id/tv_stoolType"
@@ -74,113 +56,107 @@
                 android:text="Stool Type (Bristol Stool Chart)"
                 android:textSize="20dp"/>
 
-            <com.google.android.material.chip.ChipGroup
-                android:id="@+id/chipGroup"
-                app:chipSpacingHorizontal="40dp"
-                app:chipSpacingVertical="20dp"
-                app:singleSelection="true"
+
+
+
+            <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_1"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checkable="true"
-                    android:text="Type 1"/>
+            <RadioGroup
+                android:id="@+id/rg_StoolType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_2"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                <RadioButton
+                    android:id="@+id/rbType1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Type 2"/>
+                    android:text="Type 1" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_3"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                <RadioButton
+                    android:id="@+id/rbType2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Type 3"/>
+                    android:text="Type 2" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_4"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:text="Type 4"/>
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_5"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                <RadioButton
+                    android:id="@+id/rbType3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Type 5"/>
+                    android:text="Type 3" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_6"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                <RadioButton
+                    android:id="@+id/rbType4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Type 6"/>
+                    android:text="Type 4" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_7"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                <RadioButton
+                    android:id="@+id/rbType5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Type 7"/>
+                    android:text="Type 5" />
 
-            </com.google.android.material.chip.ChipGroup>
+                <RadioButton
+                    android:id="@+id/rbType6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Type 6" />
+
+                <RadioButton
+                    android:id="@+id/rbType7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Type 7" />
+            </RadioGroup>
+
+            </HorizontalScrollView>
 
             <TextView
-                android:id="@+id/tv_blood"
+                android:id="@+id/tv_selectBlood"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="Blood"
-                android:textSize="20dp"/>
+                android:textSize="20sp"/>
 
-            <com.google.android.material.chip.ChipGroup
-                android:id="@+id/chipGroup1"
-                app:chipSpacingHorizontal="50dp"
-                app:singleSelection="true"
+            <RadioGroup
+                android:id="@+id/rg_Blood"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_b1"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:chipBackgroundColor="@color/design_default_color_primary"
-                android:clickable="true"
-                android:text="None"/>
+                android:orientation="horizontal" >
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_b2"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:text="Visible"/>
+                <RadioButton
+                    android:id="@+id/rbBlood1"
+                    android:layout_width="83dp"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="None" />
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_b3"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:text="Just Blood"/>
+                <RadioButton
+                    android:id="@+id/rbBlood2"
+                    android:layout_width="98dp"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Visible" />
 
-            </com.google.android.material.chip.ChipGroup>
+                <RadioButton
+                    android:id="@+id/rbBlood3"
+                    android:layout_width="111dp"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Just Blood" />
+            </RadioGroup>
+
 
 
             <EditText

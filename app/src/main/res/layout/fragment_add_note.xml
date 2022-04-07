@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ui.fragments.profile.AddNote">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+
+        <LinearLayout
+            android:id="@+id/ll_textviews"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+
+
+            <EditText
+                android:id="@+id/et_notesTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:backgroundTint="#26A69A"
+                android:hint="Note title"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_notesBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:backgroundTint="#26A69A"
+                android:hint="Add your notes..."
+                android:inputType="textLongMessage"
+                android:minHeight="48dp"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+
+
+            <TextView
+                android:id="@+id/tv_dateSelectedNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Date: (not selected)"
+                android:textSize="20sp" />
+
+
+
+            <TextView
+                android:id="@+id/tv_timeSelectedNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Time: (not selected)"
+                android:textSize="20sp" />
+
+
+            <Button
+                android:id="@+id/btn_confirmNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="#26A69A"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:minHeight="48dp"
+                android:text="Add Note"
+                android:textSize="20sp"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

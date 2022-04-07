@@ -68,20 +68,20 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
     // Lifecycle components
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
-    implementation "androidx.lifecycle:lifecycle-common-java8:2.4.0"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.4.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
 
     //Retrofit2
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     // Room components
-    implementation "androidx.room:room-runtime:2.4.1"
-    kapt "androidx.room:room-compiler:2.4.1"
-    implementation "androidx.room:room-ktx:2.4.1"
-    androidTestImplementation "androidx.room:room-testing:2.4.1"
+    implementation "androidx.room:room-runtime:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2"
+    implementation "androidx.room:room-ktx:2.4.2"
+    androidTestImplementation "androidx.room:room-testing:2.4.2"
 
 
 
@@ -90,5 +90,11 @@ dependencies {
 
     //Circle Indicator (ViewPager2)
     implementation 'me.relex:circleindicator:2.1.4'
+
+    //Graph components
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    //Multiline RadioGroup
+    implementation 'com.github.Gavras:MultiLineRadioGroup:v1.0.0.6'
 
 }

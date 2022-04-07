@@ -7,9 +7,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
-import android.widget.DatePicker
-import android.widget.TimePicker
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -25,14 +23,19 @@ import kotlinx.android.synthetic.main.fragment_update_exercise.btn_pickDate_upda
 import kotlinx.android.synthetic.main.fragment_update_exercise.btn_pickTime_update
 import kotlinx.android.synthetic.main.fragment_update_exercise.tv_dateSelected_update
 import kotlinx.android.synthetic.main.fragment_update_exercise.tv_timeSelected_update
+import java.text.SimpleDateFormat
 import java.util.*
 
 
 class UpdateExercise : Fragment(R.layout.fragment_update_exercise),
-    TimePickerDialog.OnTimeSetListener ,DatePickerDialog.OnDateSetListener {
+    TimePickerDialog.OnTimeSetListener ,DatePickerDialog.OnDateSetListener, SeekBar.OnSeekBarChangeListener {
 
     private var title = ""
-    private var description = ""
+    private var notes = ""
+    private var intensity = 0
+    private var intensity_start : TextView? = null
+    private var intensity_end : TextView? = null
+    private var duration = Float.NaN
     private var drawableSelected = 0
     private var timeStamp = ""
 
@@ -53,6 +56,12 @@ class UpdateExercise : Fragment(R.layout.fragment_update_exercise),
 
         exerciseViewModel = ViewModelProvider(this).get(ExerciseViewModel::class.java)
 
+        val currentDate: String = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
+        val currentTime = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
+
+        tv_dateSelected.setText(currentDate)
+        tv_timeSelected.setText(currentTime)
+
         et_exerciseTitle_update.setText(args.selectedExercise.exercise_title)
         et_exerciseDescription_update.setText(args.selectedExercise.exercise_description)
 
@@ -71,12 +80,12 @@ class UpdateExercise : Fragment(R.layout.fragment_update_exercise),
 
     private fun updateExercise(){
         title = et_exerciseTitle_update.text.toString()
-        description = et_exerciseDescription_update.text.toString()
+        notes = et_exerciseDescription_update.text.toString()
 
         timeStamp = "$cleanDate $cleanTime"
 
-        if (!(title.isEmpty() || description.isEmpty() || timeStamp.isEmpty())){
-            val exercise = Exercise(args.selectedExercise.id, title, description, timeStamp)
+        if (!(title.isEmpty() || notes.isEmpty() || timeStamp.isEmpty())){
+            val exercise = Exercise(args.selectedExercise.id, intensity, duration, title, notes, timeStamp)
 
             exerciseViewModel.updateExercise(exercise)
             Toast.makeText(context, "Exercise updated successfully!", Toast.LENGTH_SHORT).show()
@@ -147,6 +156,19 @@ class UpdateExercise : Fragment(R.layout.fragment_update_exercise),
         Toast.makeText(context, "Exercise Successfully deleted!", Toast.LENGTH_SHORT).show()
 
         findNavController().navigate(R.id.action_updateExercise_to_exerciseList)
+    }
+
+    override fun onProgressChanged(seek: SeekBar?, progress: Int, fromUser: Boolean) {
+        intensity_end!!.text = progress.toString()
+    }
+
+    override fun onStartTrackingTouch(p0: SeekBar?) {
+        intensity_start!!.text.toString()
+
+    }
+
+    override fun onStopTrackingTouch(seek: SeekBar?) {
+        intensity = intensity_end!!.text.toString().toInt()
     }
 
 }

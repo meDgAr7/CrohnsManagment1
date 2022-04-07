@@ -11,6 +11,9 @@ import com.example.crohnsmanagment1.data.models.Stool
 import com.example.crohnsmanagment1.logic.utils.Calculations
 import com.example.crohnsmanagment1.ui.fragments.stoolList.StoolListDirections
 import kotlinx.android.synthetic.main.recycler_food_item.view.*
+import kotlinx.android.synthetic.main.recycler_food_item.view.cv_cardView
+import kotlinx.android.synthetic.main.recycler_food_item.view.tv_item_createdTimeStamp
+import kotlinx.android.synthetic.main.recycler_stool_item.view.*
 
 class StoolListAdapter : RecyclerView.Adapter<StoolListAdapter.MyViewHolder>() {
 
@@ -44,10 +47,11 @@ class StoolListAdapter : RecyclerView.Adapter<StoolListAdapter.MyViewHolder>() {
     override fun onBindViewHolder(holder: StoolListAdapter.MyViewHolder, position: Int) {
         val currentStool = stoolList[position]
 
-        //holder.itemView.iv_stool
-       // holder.itemView.tv_item_title.text = currentStool.stool_title
+       holder.itemView.tv_item_stoolType.text = "Type: ${currentStool.stool_type}"
+        holder.itemView.tv_item_blood.text = "Blood: ${currentStool.stool_blood}"
+        holder.itemView.tv_item_stoolNote.text = currentStool.stool_notes
 
-        holder.itemView.tv_timeElapsed.text = Calculations().calculateTimeBetweenDates(currentStool.stool_starTime)
+       // holder.itemView.tv_timeElapsed.text = Calculations().calculateTimeBetweenDates(currentStool.stool_starTime)
         holder.itemView.tv_item_createdTimeStamp.text = "Added on: ${currentStool.stool_starTime}"
 
     }

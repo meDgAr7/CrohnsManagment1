@@ -75,7 +75,7 @@ class AddFood : Fragment(R.layout.fragment_add_food),
             findNavController().navigate(R.id.action_addFood_to_foodList)
 
         }else{
-            Toast.makeText(context, "Please fill all the fields", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Please fill all fields", Toast.LENGTH_SHORT).show()
         }
     }
 

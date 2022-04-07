@@ -3,34 +3,54 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/drawable/border.xml" value="0.19282051282051282" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/drawable/ic_add.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/drawable/ic_appointment.xml" value="0.19282051282051282" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/drawable/ic_home.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/drawable/ic_medication.xml" value="0.19282051282051282" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/drawable/ic_notes.xml" value="0.19282051282051282" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/drawable/ic_outline_add_circle_24.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/drawable/ic_stats.xml" value="0.17962962962962964" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/drawable/ic_weight.xml" value="0.19282051282051282" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/drawable/round_button.xml" value="0.13518518518518519" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/activity_intro.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_add_exercise.xml" value="0.1796875" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/alert_number_picker.xml" value="0.1796875" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_add_appointment.xml" value="0.1796875" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_add_exercise.xml" value="0.22" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_add_food.xml" value="0.22" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_add_medication.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_add_mood.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_add_stool.xml" value="0.22" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_add_note.xml" value="0.1796875" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_add_stool.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_add_weight.xml" value="0.1796875" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_appointment_list.xml" value="0.1796875" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_exercise_graph.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_exercise_list.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_food_list.xml" value="0.1796875" />
-        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_home_page.xml" value="0.22" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_home_page.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_medication_list.xml" value="0.1796875" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_mood_graph.xml" value="0.21794061907770057" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_mood_list.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_news.xml" value="0.1796875" />
-        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_stats.xml" value="0.1796875" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_notes_list.xml" value="0.1796875" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_stats.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_stool_list.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_update_exercise.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_update_food.xml" value="0.1" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_update_mood.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_update_stool.xml" value="0.22" />
-        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_user_profile.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_user_profile.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/fragment_weight_graph.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/intro_item_page.xml" value="0.1796875" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/recycler_appointment_item.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/recycler_exercise_item.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/recycler_food_item.xml" value="0.1" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/recycler_medication_item.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/recycler_mood_item.xml" value="0.1796875" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/recycler_notes_item.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/recycler_stool_item.xml" value="0.1796875" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/recycler_weight_item.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/layout/test_fragment.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/menu/bottom_nav_bar.xml" value="0.1796875" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/CrohnsManagment1/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1796875" />
